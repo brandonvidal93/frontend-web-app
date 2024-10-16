@@ -36,9 +36,9 @@ const OrderList = ({ orders, onUpdateOrder, onDeleteOrder }) => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 gap-4">
       {orders.map((order) => (
-        <div key={order.id} className="p-4 border rounded-lg">
+        <div key={order.id} className="p-3 border rounded-lg">
           {editingOrderId === order.id ? (
             <div>
               <input
@@ -85,11 +85,11 @@ const OrderList = ({ orders, onUpdateOrder, onDeleteOrder }) => {
           ) : (
             <div>
               <h2 className="text-xl font-bold">Order #{order.id}</h2>
-              <p>Date: {order.orderDate}</p>
-              <p>Customer: {order.customerName}</p>
-              <p>Product: {order.product.name}</p>
-              <p>Description: {order.product.description}</p>
-              <p>Price: ${order.product.price}</p>
+              <p><b>Date:</b> {order.orderDate}</p>
+              <p><b>Customer:</b> {order.customerName}</p>
+              <p><b>Product:</b> {order.product.name}</p>
+              <p><b>Description:</b> {order.product.description}</p>
+              <p className='mb-3'><b>Price:</b> ${order.product.price}</p>
               <button
                 className="bg-blue-500 text-white p-2 mr-2 rounded"
                 onClick={() => handleEditClick(order)}

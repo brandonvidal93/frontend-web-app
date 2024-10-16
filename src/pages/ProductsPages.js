@@ -46,7 +46,7 @@ const ProductPage = () => {
   };
 
   return (
-    <div>
+    <div className='p-5'>
       <h1 className="text-2xl font-bold mb-4">Product Management</h1>
       <AddProduct onAddProduct={addProduct} />
       <ProductList

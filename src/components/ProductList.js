@@ -27,9 +27,9 @@ const ProductList = ({ products, onUpdateProduct, onDeleteProduct }) => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
       {products.map((product) => (
-        <div key={product.id} className="p-4 border rounded-lg">
+        <div key={product.id} className="p-3 border rounded-lg">
           {editingProductId === product.id ? (
             <div>
               <input
@@ -70,7 +70,7 @@ const ProductList = ({ products, onUpdateProduct, onDeleteProduct }) => {
             <div>
               <h2 className="text-xl font-bold">{product.name}</h2>
               <p>{product.description}</p>
-              <p>Price: ${product.price}</p>
+              <p className='mb-3'><b>Price:</b> ${product.price}</p>
               <button
                 className="bg-blue-500 text-white p-2 mr-2 rounded"
                 onClick={() => handleEditClick(product)}
